@@ -64,9 +64,6 @@ class Actor(Generic[T]):
         self.__process = Process(target=_run, args=(source, environment_factory, self.__channel))
         self.__process.start()
 
-    def receive(self) -> None:
-        return self.__queue.get(block=True, timeout=0.1)
-
     def send(self, message : T):
         self.__channel.send(message)
 
