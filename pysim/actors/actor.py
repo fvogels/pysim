@@ -2,21 +2,10 @@ from multiprocessing import Process, Queue
 from typing import Any, Callable, Mapping, TypeVar, Generic
 from types import new_class
 from abc import ABC, abstractmethod
+from pysim.actors.channel import Channel
 
 
 T = TypeVar('T')
-
-class Channel(Generic[T]):
-    __queue : Queue
-
-    def __init__(self, queue : Queue):
-        self.__queue = queue
-
-    def send(self, message : T) -> None:
-        self.__queue.put(message)
-
-    def receive(self) -> T:
-        return self.__queue.get(block=True, timeout=1)
 
 
 def export(func):
