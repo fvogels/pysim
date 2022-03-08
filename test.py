@@ -1,6 +1,5 @@
 from pysim.environments.simple import SimpleEnvironment
 from pysim.actors.actor import Actor
-import importlib
 
 
 source = '''
