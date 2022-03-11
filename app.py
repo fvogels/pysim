@@ -5,7 +5,7 @@ from pysim.graphics.mainwindow import MainWindow
 
 def main():
     window = MainWindow()
-    window.process_messages()
+    window.run()
 
 
 if __name__ == '__main__':

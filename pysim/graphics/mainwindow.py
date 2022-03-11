@@ -6,8 +6,9 @@ class MainWindow:
         size = (1920, 1080)
         pygame.display.set_mode(size)
 
-    def process_messages(self):
+    def run(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
+
