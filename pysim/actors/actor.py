@@ -48,7 +48,7 @@ class Actor(Generic[T]):
     __channel : Channel[T]
 
     def __init__(self, source : str, environment_factory : Callable[[Channel], Any]):
-        queue = Queue()
+        queue = Queue[T]()
         self.__channel = Channel(queue)
         self.__process = Process(target=_run, args=(source, environment_factory, self.__channel))
         self.__process.start()
