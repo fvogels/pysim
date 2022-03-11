@@ -13,3 +13,11 @@ class Grid(Generic[T]):
 
     def __getitem__(self, position : Position) -> T:
         return self.__contents[position.y][position.x]
+
+    @property
+    def width(self) -> int:
+        return len(self.__contents[0])
+
+    @property
+    def height(self) -> int:
+        return len(self.__contents)
