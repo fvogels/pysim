@@ -1,17 +1,11 @@
-from pysim.environments.simple import SimpleEnvironment
-from pysim.actors.actor import Actor
+from pysim.graphics.mainwindow import MainWindow
 
 
-source = '''
-forward()
-forward()
-'''
 
 
 def main():
-    actor = Actor(source, SimpleEnvironment)
-    print(actor.receive())
-    print(actor.receive())
+    window = MainWindow()
+    window.process_messages()
 
 
 if __name__ == '__main__':
