@@ -1,6 +1,5 @@
 from multiprocessing import Queue
 from typing import TypeVar, Generic
-from types import new_class
 
 
 T = TypeVar('T')
