@@ -14,6 +14,7 @@ class LinearFloatAnimation(Animation[float]):
         self.__duration = duration
 
     def __getitem__(self, time : float) -> float:
+        assert 0 <= time < self.__duration
         relative_t = time / self.__duration
         return self.__start + (self.__stop - self.__start) * relative_t
 
