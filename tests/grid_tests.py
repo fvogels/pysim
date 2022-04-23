@@ -1,5 +1,4 @@
 from pysim.data.grid import Grid
-from pysim.data.position import Position
 import pytest
 
 
