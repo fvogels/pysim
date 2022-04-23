@@ -23,4 +23,3 @@ class SequenceAnimation(Animation[T]):
     @property
     def duration(self) -> float:
         return sum(child.duration for child in self.__children)
-
