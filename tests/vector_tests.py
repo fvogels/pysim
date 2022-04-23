@@ -1,4 +1,4 @@
-from pysim.data.vector import Vector
+from pysim.data.vector import Vector, NORTH, EAST, SOUTH, WEST
 from pytest import mark
 
 
@@ -32,8 +32,20 @@ def test_4ccw_eq_id(x, y):
         Vector(0, 0)
     ),
     (
-        Vector(1, 0),
-        Vector(0, -1)
+        NORTH,
+        EAST,
+    ),
+    (
+        EAST,
+        SOUTH,
+    ),
+    (
+        SOUTH,
+        WEST,
+    ),
+    (
+        WEST,
+        NORTH,
     ),
     (
         Vector(1, 1),
