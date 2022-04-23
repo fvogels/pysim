@@ -1,5 +1,5 @@
 from typing import TypeVar, Generic, Callable
-from pysim.data.position import Position
+from .vector import Vector
 
 
 T = TypeVar('T')
@@ -8,10 +8,10 @@ T = TypeVar('T')
 class Grid(Generic[T]):
     __contents : list[list[T]]
 
-    def __init__(self, width, height, initializer : Callable[[Position], T]):
-        self.__contents = [[initializer(Position(x, y)) for x in range(width)] for y in range(height)]
+    def __init__(self, width, height, initializer : Callable[[Vector], T]):
+        self.__contents = [[initializer(Vector(x, y)) for x in range(width)] for y in range(height)]
 
-    def __getitem__(self, position : Position) -> T:
+    def __getitem__(self, position : Vector) -> T:
         return self.__contents[position.y][position.x]
 
     @property
