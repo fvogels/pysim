@@ -1,7 +1,5 @@
 from multiprocessing import Process, Queue
-from typing import Any, Callable, Mapping, TypeVar, Generic
-from types import new_class
-from abc import ABC, abstractmethod
+from typing import Any, Callable, TypeVar, Generic
 from pysim.actors.channel import Channel
 
 
