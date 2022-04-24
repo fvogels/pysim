@@ -37,6 +37,7 @@ def _create_mapping_from_environment(environment) -> dict[str, Any]:
 
 
 def _run(source : str, environment_factory : Callable[[Channel], Any], channel : Channel[T]) -> None:
+    # print(sys.modules)
     environment = environment_factory(channel)
     mapping = _create_mapping_from_environment(environment)
     exec(source, mapping)
@@ -46,7 +47,7 @@ class Actor(Generic[T]):
     __channel : Channel[T]
 
     def __init__(self, source : str, environment_factory : Callable[[Channel], Any]):
-        queue = Queue[T]()
+        queue : Queue[T] = Queue()
         self.__channel = Channel(queue)
         self.__process = Process(target=_run, args=(source, environment_factory, self.__channel))
         self.__process.start()
