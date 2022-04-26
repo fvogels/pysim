@@ -8,9 +8,5 @@ class Settings(ABC):
         ...
 
     @abstractmethod
-    def __setitem__(self, key : str, value : Any) -> None:
-        ...
-
-    @abstractmethod
     def __contains__(self, key : str) -> bool:
         ...

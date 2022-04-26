@@ -14,8 +14,5 @@ class HierarchicalSettings(Settings):
         child = next(c for c in self.__children if key in c)
         return child[key]
 
-    def __setitem__(self, key : str, value : Any) -> None:
-        self.__children[-1][key] = value
-
     def __contains__(self, key: str) -> bool:
         return any(key in c for c in self.__children)
