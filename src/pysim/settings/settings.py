@@ -10,12 +10,3 @@ class Settings(ABC):
     @abstractmethod
     def __contains__(self, key : str) -> bool:
         ...
-
-
-_settings = {
-    'show_fps': False,
-    'max_fps': 60,
-}
-
-def setting(key):
-    return _settings[key]
