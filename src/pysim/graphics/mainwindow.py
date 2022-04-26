@@ -1,6 +1,6 @@
 import pygame
 from pysim.graphics.screen import Screen
-from pysim.settings.settings import setting
+from pysim.settings import setting, set_setting
 from typing import cast
 from .fps import Fps, FpsSource
 
@@ -26,6 +26,16 @@ class MainWindow:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
+                elif event.type == pygame.KEYDOWN:
+                    key = event.key
+                    ctrl = (event.mod & pygame.KMOD_CTRL) != 0
+
+                    if key == pygame.K_f and ctrl:
+                        print(f'old: {setting("show_fps")}')
+                        set_setting('show_fps', not setting('show_fps'))
+                        print(f'new: {setting("show_fps")}')
+
+
 
             elapsed_seconds = self.__get_elapsed_seconds()
 

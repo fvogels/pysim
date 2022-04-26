@@ -1,7 +1,7 @@
 import pygame
 from abc import ABC
 from pygame.time import Clock
-from pysim.settings.settings import setting
+from pysim.settings import setting
 
 
 class FpsSource(ABC):
