@@ -31,9 +31,7 @@ class MainWindow:
                     ctrl = (event.mod & pygame.KMOD_CTRL) != 0
 
                     if key == pygame.K_f and ctrl:
-                        print(f'old: {setting("show_fps")}')
                         set_setting('show_fps', not setting('show_fps'))
-                        print(f'new: {setting("show_fps")}')
 
 
 
